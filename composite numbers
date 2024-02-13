@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class DAY3COMPOSITEBETWEENAANDB{
+public class COMPOSIT{
     public static void main(String[] Args){
         Scanner sc = new Scanner(System.in);
 
