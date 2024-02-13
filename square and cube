@@ -1,0 +1,12 @@
+import java.util.*;
+
+public class SQUARESCUBES {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter a Decimal Number : ");
+        float num = sc.nextFloat();
+
+        System.out.println("Square of " + num + " : " + num*num);
+        System.out.print("Cube of " + num + " : " );
+        System.out.println("%.3f",(num*num*num));
