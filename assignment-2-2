@@ -1,0 +1,38 @@
+import java.util.Scanner;
+import java.util.*;
+public class mth_nth_Maxandmin
+{
+    public static void main(String[] args)
+    {
+        Scanner a= new Scanner(System.in);
+        System.out.println(" enter the size of the array :");
+        int b= a.nextInt();
+        int max=0;
+        int min=0;
+        System.out.println(" enter the elements in the array");
+        int arr[]=new int[b];
+        for(int i=0;i<b;i++)
+        {
+            arr[i]=a.nextInt();
+        }
+        Arrays.sort(arr);
+        System.out.println(" enter the mth maximum element needed :");
+        int m=a.nextInt();
+        System.out.println(" enter the nth minimum element needed :");
+        int n=a.nextInt();
+        if(m==0 || m<n)
+        {
+            System.out.println(" invalid number ");
+        }
+        else
+        {
+            max=arr[arr[m-1]];
+            min=arr[n-1];
+        }
+        System.out.println(" the maximum number is :"+ max);
+        System.out.println(" the minimun number is :"+ min);
+        System.out.println(" the sum of maximum and minimum number is :"+ (max+min));
+        System.out.println(" the diff of maximum and min number is :"+ (max-min));
+
+    }
+}
