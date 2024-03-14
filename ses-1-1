@@ -1,0 +1,24 @@
+public class data_types {
+    public static void main(String[] args)
+    {
+        boolean flag = true;
+        byte range;
+        range = 124;
+        short temperature;
+        temperature = -200;
+        int r = -4250000;
+        long ra = -42332200000L;
+        double number = -42.3;
+        float num = -42.3f;
+        char letter = 'B';
+
+        System.out.println(flag);
+        System.out.println(range);
+        System.out.println(temperature);
+        System.out.println(r);
+        System.out.println(ra);
+        System.out.println(number);
+        System.out.println(number);
+        System.out.println(letter);
+    }
+}
