@@ -1,26 +1,33 @@
-class Base {
-   
-    void area(int a, int b) {
-        int area = a * a;
-        System.out.println("Area of the square: " + area);
-    }
-}
 
-class Derived extends Base {
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 
-    @Override
-    void area(int length, int breadth) {
-        int area = length * breadth;
-        System.out.println("Area of the rectangle: " + area);
-    }
-}
-
-public class Main {
+public class NumberFormatExceptionHandling {
     public static void main(String[] args) {
-        Base baseObj = new Base();
-        baseObj.area(5, 0); 
+        try {
+            
+            String nonNumericString = "abc";
+            int parsedInt = Integer.parseInt(nonNumericString); 
 
-        Derived derivedObj = new Derived();
-        derivedObj.area(5, 6); 
+            
+            String userInput = "123abc";
+            int inputInt = Integer.parseInt(userInput);
+
+            
+            String decimalString = "12,34";
+            DecimalFormat decimalFormat = new DecimalFormat("#,##0.00");
+            double formattedDouble = decimalFormat.parse(decimalString).doubleValue(); 
+
+            
+            DecimalFormatSymbols symbols = new DecimalFormatSymbols(Locale.US);
+            symbols.setDecimalSeparator(',');
+            DecimalFormat incorrectFormat = new DecimalFormat("#,##0.00", symbols);
+            double incorrectDouble = incorrectFormat.parse("12.34").doubleValue(); 
+        } catch (NumberFormatException e) {
+            System.out.println("Number Format Exception occurred: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Exception occurred: " + e.getMessage());
+        }
     }
 }
